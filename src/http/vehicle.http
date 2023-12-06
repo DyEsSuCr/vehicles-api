@@ -5,11 +5,32 @@ Accept: application/json
 {
   "capacity": "hola",
   "model": "22as",
-  "plate": "123"
+  "plate": "2133"
 }
 
 ###
 GET http://localhost:3000/api/v1/vehicles
 content-type: application/json
 Accept: application/json
+
+###
+POST http://localhost:3000/api/v1/vehicles/associate
+content-type: application/json
+Accept: application/json
+
+{
+  "driverId": 1,
+  "vehicleId": 1
+}
+
+
+###
+POST http://localhost:3000/api/v1/vehicles/disassociate
+content-type: application/json
+Accept: application/json
+
+{
+  "driverId": 1,
+  "vehicleId": 1
+}
 

@@ -22,6 +22,6 @@ export class Vehicle extends BaseEntity {
   @Column({ length: 7 })
     capacity: string
 
-  @ManyToOne(() => Driver, (driver) => driver.vehicles)
-    driver: Driver[]
+  @ManyToOne(() => Driver, (driver) => driver.vehicles, { nullable: true })
+    driver: Driver | null
 }

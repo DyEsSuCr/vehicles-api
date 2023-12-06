@@ -5,3 +5,5 @@ export const router = Router()
 
 router.get('/', VehicleController.findAll)
 router.post('/', VehicleController.create)
+router.post('/associate', VehicleController.asociateDriverVehicle)
+router.post('/disassociate', VehicleController.disassociateDriverVehicle)

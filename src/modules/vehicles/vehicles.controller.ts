@@ -21,6 +21,26 @@ export class VehicleController {
       next(err)
     }
   }
+
+  async asociateDriverVehicle (_: Request, res: Response, next: NextFunction) {
+    try {
+      const result = await ModelVehicle.asociateDriverVehicle(1, 1)
+      responseHandler(res, 200, result)
+    } catch (err) {
+      console.log(err)
+      next(err)
+    }
+  }
+
+  async disassociateDriverVehicle (_: Request, res: Response, next: NextFunction) {
+    try {
+      const result = await ModelVehicle.disassociateDriverVehicle(1, 1)
+      responseHandler(res, 200, result)
+    } catch (err) {
+      console.log(err)
+      next(err)
+    }
+  }
 }
 
 export default new VehicleController()
