@@ -13,9 +13,9 @@ export class VehicleController {
     }
   }
 
-  async findAll (_: Request, res: Response, next: NextFunction) {
+  async findAll (req: Request, res: Response, next: NextFunction) {
     try {
-      const result = await ModelVehicle.findAll()
+      const result = await ModelVehicle.findAll(req)
       responseHandler(res, 200, result)
     } catch (err) {
       next(err)
@@ -24,7 +24,7 @@ export class VehicleController {
 
   async asociateDriverVehicle (_: Request, res: Response, next: NextFunction) {
     try {
-      const result = await ModelVehicle.asociateDriverVehicle(1, 1)
+      const result = await ModelVehicle.asociateDriverVehicle(4, 5)
       responseHandler(res, 200, result)
     } catch (err) {
       console.log(err)
