@@ -1,0 +1,17 @@
+POST http://localhost:3000/api/v1/drivers
+content-type: application/json
+Accept: application/json
+
+{
+  "firtname": "hola",
+  "lastname": "22asd",
+  "document": "123",
+  "phone": "20asd",
+  "street": "123asd"
+}
+
+###
+GET http://localhost:3000/api/v1/drivers
+content-type: application/json
+Accept: application/json
+
