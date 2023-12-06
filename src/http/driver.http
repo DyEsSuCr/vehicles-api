@@ -5,8 +5,8 @@ Accept: application/json
 {
   "firtname": "hola",
   "lastname": "22asd",
-  "document": "123",
-  "phone": "20asd",
+  "document": "12345678901",
+  "phone": "1234567890",
   "street": "123asd"
 }
 
