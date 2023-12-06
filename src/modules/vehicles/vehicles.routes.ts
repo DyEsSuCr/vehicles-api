@@ -1,7 +1,7 @@
-import { Request, Response, Router } from 'express'
+import { Router } from 'express'
+import VehicleController from './vehicles.controller'
 
 export const router = Router()
 
-router.get('/', (req: Request, res: Response) => {
-  res.send('hello vehicles')
-})
+router.get('/', VehicleController.findAll)
+router.post('/', VehicleController.create)

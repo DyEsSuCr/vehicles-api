@@ -16,7 +16,7 @@ export class Vehicle extends BaseEntity {
   @Column({ length: 4 })
     model: string
 
-  @Column({ length: 7 })
+  @Column({ length: 7, unique: true })
     plate: string
 
   @Column({ length: 7 })
