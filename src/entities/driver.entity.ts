@@ -20,9 +20,9 @@ export class Driver extends BaseEntity {
     firtname: string
 
   @Column({ length: 11, unique: true })
-    identificador: string
+    document: string
 
-  @Column({ length: 10, unique: true })
+  @Column({ length: 10 })
     phone: string
 
   @Column({ length: 50 })
