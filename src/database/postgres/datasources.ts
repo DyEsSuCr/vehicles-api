@@ -1,6 +1,10 @@
 import { DataSource } from 'typeorm'
 import { settings } from '../../config/settings'
 
+import { Driver } from '../../entities/driver.entity'
+import { Order } from '../../entities/order.entity'
+import { Vehicle } from '../../entities/vehicle.entity'
+
 const { DB } = settings
 
 export const AppDataSource = new DataSource({
@@ -12,5 +16,5 @@ export const AppDataSource = new DataSource({
   database: DB.NAME,
   synchronize: false,
   logging: false,
-  entities: []
+  entities: [Driver, Order, Vehicle]
 })
