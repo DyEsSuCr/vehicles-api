@@ -6,7 +6,7 @@ import { Server } from 'node:http'
 import { settings } from './config/settings'
 import { handleErrorMiddleware, handleError404 } from './middlewares/errror.handler'
 import { routes } from './routes/routes'
-import { AppDataSource } from './database/datasources'
+import { AppDataSource } from './database/postgres/datasources'
 
 export class App {
   private readonly app: express.Application

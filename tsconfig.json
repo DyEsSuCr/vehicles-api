@@ -16,13 +16,14 @@
         "./src/*"
       ]
     },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "rootDir": "./",
     "skipLibCheck": true,
     "strict": true,
     "strictPropertyInitialization": false,
     "target": "ES2020",
     "typeRoots": [
-      "@types",
       "node_modules/@types"
     ]
   },
