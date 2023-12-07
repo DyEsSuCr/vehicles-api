@@ -1,3 +1,4 @@
+### crear un nuevo vehiculo
 POST http://localhost:3000/api/v1/vehicles
 content-type: application/json
 Accept: application/json
@@ -9,6 +10,10 @@ Accept: application/json
 }
 
 ### obtener todos los vehiculos
+### querys: associate true | false
+### si associate es true muestra solo con vehiculos con conductor
+### si associate es false muestra solo los vehiculos sin conductor
+### si associate no se pasa como query defecto muestra todos los vehiculos con y sin conductor
 GET http://localhost:3000/api/v1/vehicles
 content-type: application/json
 Accept: application/json
