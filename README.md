@@ -1,3 +1,14 @@
+## instalar las dependecias y ejecutar el sevidor
+```
+pnpm i
+pnpm dev
+```
+
+## .env
+Para permitir la lectura de las variables de entorno, se recomienda crear un archivo .env en la raíz del proyecto
+
+
+
 ## Completar los siguientes campos es esencial para establecer la conexión con la base de datos PostgreSQL:
 
 | Variables      |
