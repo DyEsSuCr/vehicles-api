@@ -19,6 +19,7 @@ export const handleErrorMiddleware = (error: HTTPError, _req: Request, res: Resp
     const { statusCode, message } = error
     responseHandler(res, statusCode, { statusCode, message })
   } else {
+    console.log('Serve err ', error)
     responseHandler(res, 500, { statusCode: 500, message: MESSAGES_ERRORS.INTERNAL_SERVER_ERROR })
   }
 }
