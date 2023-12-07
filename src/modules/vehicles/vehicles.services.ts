@@ -38,28 +38,18 @@ class ModelVehicle {
     return await Vehicle.find({ relations: ['driver'] })
   }
 
-  async asociateDriverVehicle (vehicleId: number, driverId: number): Promise<Vehicle> {
+  async modifyDriverVehicleAssociation ({ disassociate, driverId, vehicleId }: { disassociate: boolean, driverId: number, vehicleId: number }): Promise<Vehicle> {
     const driver = await Driver.findOne({ where: { id: driverId } })
     const vehicle = await Vehicle.findOne({ where: { id: vehicleId }, relations: ['driver'] })
 
-    if (driver === null) throw new HTTPError(400, 'Driver  not found')
-    if (vehicle === null) throw new HTTPError(400, 'vehicle not found')
+    if (!driver) throw new HTTPError(400, 'Driver not found')
+    if (!vehicle) throw new HTTPError(400, 'Vehicle not found')
 
-    vehicle.driver = driver
-
-    await vehicle.save()
-
-    return vehicle
-  }
-
-  async disassociateDriverVehicle (vehicleId: number, driverId: number): Promise<Vehicle> {
-    const driver = await Driver.findOne({ where: { id: driverId } })
-    const vehicle = await Vehicle.findOne({ where: { id: vehicleId }, relations: ['driver'] })
-
-    if (driver === null) throw new HTTPError(400, 'Driver  not found')
-    if (vehicle === null) throw new HTTPError(400, 'vehicle not found')
-
-    vehicle.driver = null
+    if (disassociate) {
+      vehicle.driver = null
+    } else {
+      vehicle.driver = driver
+    }
 
     await vehicle.save()
 

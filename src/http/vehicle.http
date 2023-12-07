@@ -5,32 +5,22 @@ Accept: application/json
 {
   "capacity": "hola",
   "model": "22as",
-  "plate": "2133534"
+  "plate": "21a3534"
 }
 
-###
+### obtener todos los vehiculos
 GET http://localhost:3000/api/v1/vehicles
 content-type: application/json
 Accept: application/json
 
-###
-POST http://localhost:3000/api/v1/vehicles/associate
+### asosicar un conductor con un vehiculo
+POST http://localhost:3000/api/v1/vehicles/modifyAssociation
 content-type: application/json
 Accept: application/json
 
 {
-  "driverId": 1,
-  "vehicleId": 1
-}
-
-
-###
-POST http://localhost:3000/api/v1/vehicles/disassociate
-content-type: application/json
-Accept: application/json
-
-{
-  "driverId": 1,
-  "vehicleId": 1
+  "driverId": 5,
+  "vehicleId": 5,
+  "disassociate": true
 }
 

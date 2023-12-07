@@ -22,19 +22,9 @@ export class VehicleController {
     }
   }
 
-  async asociateDriverVehicle (_: Request, res: Response, next: NextFunction) {
+  async modifyDriverVehicleAssociation ({ body }: Request, res: Response, next: NextFunction) {
     try {
-      const result = await ModelVehicle.asociateDriverVehicle(4, 5)
-      responseHandler(res, 200, result)
-    } catch (err) {
-      console.log(err)
-      next(err)
-    }
-  }
-
-  async disassociateDriverVehicle (_: Request, res: Response, next: NextFunction) {
-    try {
-      const result = await ModelVehicle.disassociateDriverVehicle(1, 1)
+      const result = await ModelVehicle.modifyDriverVehicleAssociation({ ...body })
       responseHandler(res, 200, result)
     } catch (err) {
       console.log(err)
