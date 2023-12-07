@@ -7,9 +7,9 @@ pnpm dev
 ## .env
 Para permitir la lectura de las variables de entorno, se recomienda crear un archivo .env en la raíz del proyecto
 
+Completar los siguientes campos es esencial para establecer la conexión con la base de datos PostgreSQL:
 
-
-## Completar los siguientes campos es esencial para establecer la conexión con la base de datos PostgreSQL:
+###### tambien se pueden encontrar  las varibles de ejemplo en la raiz del proyecto en el archivo .env.example
 
 | Variables      |
 |----------------|
@@ -72,6 +72,17 @@ Este es un esquema de base de datos representado en formato de diagrama entidad-
 ## Relaciones
 - La tabla Order tiene una relación muchos a uno con la tabla Driver a través de la columna driver.
 - La tabla Vehicle tiene una relación muchos a uno con la tabla Driver a través de la columna driver.
+
+
+## Tecnologias usadas
+
+|                |
+|----------------|
+| Express        |
+| TypeScript     |
+| PostgreSQL     |
+| TypeORM        |
+| Zod            |
 
 
 ## Comentarios
